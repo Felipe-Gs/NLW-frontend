@@ -1,4 +1,6 @@
 import { Image, IImageProps } from 'native-base';
+import React from 'react';
+
 
 export function Flag({ ...rest }: IImageProps) {
   return (

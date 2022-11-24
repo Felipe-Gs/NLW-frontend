@@ -7,17 +7,21 @@ import { useAuth } from '../hooks/useAuth';
 
 export default function SingIn() {
   
-  const {singIn, user} =useAuth();
+  const {singIn, user, clicar, isUserLoading} =useAuth();
+
   console.log('Dados do usuario: ', user)
   return (
     <Center flex={1} backgroundColor={"black"} padding={7}>
         <Logo height={40} width={150}/>
+
         <Button 
           leftIcon={<Icon as={Fontisto} name="google" color="white" size="md"/>} 
           title="ENTRAR COM O GOOGLE"
           type='SECONDARY'
           mt={12}
           onPress={singIn}
+          isLoading={true}
+          _loading={{_spinner:{color:"white"}}}
         />
         <Text color={'white'} textAlign={"center"} mt={4}>Não utilizamos nenhuma informações além {'\n'}do seu email para criação de sua conta.</Text>
        

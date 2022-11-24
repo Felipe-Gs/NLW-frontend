@@ -4,11 +4,8 @@ import {THEME} from './src/styles/theme';
 import {useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from '@expo-google-fonts/roboto';
 // import Loading from './src/components/loading';
 import { Loading } from "./src/components/Loading";
-import SingIn from './src/screens/SingIn';
 import { AuthContextProvider } from "./src/contexts/AuthContext";
-import New from "./src/screens/New";
-import Find from "./src/screens/FInd";
-import { Pools } from "./src/screens/Pools";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({Roboto_400Regular, Roboto_500Medium, Roboto_700Bold });
@@ -23,7 +20,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded?<Pools/>:<Loading/>}
+        {fontsLoaded?<Routes/>:<Loading/>}
       </AuthContextProvider>
         
     </NativeBaseProvider>
