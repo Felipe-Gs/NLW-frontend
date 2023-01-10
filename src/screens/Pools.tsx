@@ -7,11 +7,12 @@ import { Octicons } from '@expo/vector-icons';
 import { api } from "../services/api";
 import { Loading } from '../components/Loading';
 
-import { PoolCard } from '../components/PoolCard';
+import { PoolCard, PoolPros } from '../components/PoolCard';
 
 export function Pools(){
     const {navigate} = useNavigation();
     const [isLoading, setIsLoading] = useState(true)
+    const [pools, setPools] = useState([]);
     const toast = useToast();
 
     async function fecthPools(){
